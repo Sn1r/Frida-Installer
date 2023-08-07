@@ -49,6 +49,8 @@ def get_frida_latest(device):
     soup = BeautifulSoup(r.content, "html.parser")
     version = soup.find("h1", class_="d-inline mr-3").text.split()[1]
     cpu_arch = device.shell("getprop ro.product.cpu.abi").strip()
+    if "arm64" in cpu_arch:
+        cpu_arch = device.shell("getprop ro.product.cpu.abi").strip().split('-')[0]
     return version, cpu_arch
 
 def download_frida_server(version, cpu_arch):
