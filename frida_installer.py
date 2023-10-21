@@ -112,8 +112,10 @@ def main():
                 output = subprocess.run(command, text=True, capture_output=True)
 
                 if "Requirement already satisfied" in output.stdout:
-                    print(f"{YELLOW}[!] frida is already installed{RESET}")
+                    print(f"{YELLOW}[!] frida is already installed. Checking if upgrade is needed...{RESET}")
                     success_statuses.append(True)
+                    command = ['pip3', 'install', 'frida', '--upgrade']
+                    output = subprocess.run(command, text=True, capture_output=True)
                 
                 if output.returncode != 0:
                     print(output.stderr)
@@ -129,8 +131,10 @@ def main():
                 output = subprocess.run(command, text=True, capture_output=True)
 
                 if "Requirement already satisfied" in output.stdout:
-                    print(f"{YELLOW}[!] frida-tools is already installed{RESET}")
+                    print(f"{YELLOW}[!] frida-tools is already installed. Checking if upgrade is needed...{RESET}")
                     success_statuses.append(True)
+                    command = ['pip3', 'install', 'frida-tools', '--upgrade']
+                    output = subprocess.run(command, text=True, capture_output=True)
                 
                 if output.returncode != 0:
                     print(output.stderr)
