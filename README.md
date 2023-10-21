@@ -1,4 +1,4 @@
-# Frida Installer
+![image](https://github.com/Sn1r/Frida-Installer/assets/71400526/e0e1788f-f652-4118-943e-74a60d4381d7)
 
 Frida Installer is a Python script that automates the installation of [Frida](https://frida.re/), a powerful dynamic instrumentation toolkit, along with its essential tools. It's designed to simplify and speed up the process of setting up Frida on your host and Android device.
 
